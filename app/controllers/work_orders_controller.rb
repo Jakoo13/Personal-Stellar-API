@@ -19,11 +19,23 @@ class WorkOrdersController < ApplicationController
     @work_order = WorkOrder.new(work_order_params)
 
     if @work_order.save
-      render json: @work_order, status: :created, location: @work_order
+      render json: @work_order, status: :created, location: @work_order,  :except =>  [:created_at, :updated_at]
     else
       render json: @work_order.errors, status: :unprocessable_entity
     end
   end
+
+  # def create 
+  #   @work_order = WorkOrder.new(work_order_params)
+  #   @work_order.user = current_user # here You setting the user
+
+  #   if @work_order.save
+  #     render json: @work_order, status: :created, location: @work_order
+  #   else
+  #     # puts @work_order.errors # this should print errors to the console  
+  #     render json: @work_order.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # PATCH/PUT /work_orders/1
   def update
@@ -47,6 +59,6 @@ class WorkOrdersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def work_order_params
-      params.require(:work_order).permit(:title, :content)
+      params.require(:work_order).permit(:title, :content, :appointment_time, :user_id)
     end
 end

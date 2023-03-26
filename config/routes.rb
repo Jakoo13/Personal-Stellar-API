@@ -14,4 +14,6 @@ Rails.application.routes.draw do
     registrations: 'registration'
   }
 
+  get 'users/:id/work-orders' => 'users#work_orders'
+
 end

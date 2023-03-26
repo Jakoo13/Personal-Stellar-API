@@ -3,7 +3,8 @@ class CreateWorkOrders < ActiveRecord::Migration[7.0]
     create_table :work_orders do |t|
       t.string :title
       t.text :content
-
+      t.datetime :appointment_time
+      t.references :user
       t.timestamps
     end
   end
