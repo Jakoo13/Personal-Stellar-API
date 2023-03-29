@@ -5,8 +5,8 @@ class CreateWorkOrders < ActiveRecord::Migration[7.0]
       t.text :content
       t.string :work_type
       t.datetime :appointment_time
-      t.references :user
-      t.string :stage, default: "accept/decline"
+      t.references :user, null: true, default: 0
+      t.string :stage, default: "unassigned"
       t.timestamps
     end
   end

@@ -42,8 +42,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_15_180540) do
     t.text "content"
     t.string "work_type"
     t.datetime "appointment_time"
-    t.bigint "user_id"
-    t.string "stage", default: "accept/decline"
+    t.bigint "user_id", default: 0
+    t.string "stage", default: "unassigned"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_work_orders_on_user_id"

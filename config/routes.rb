@@ -14,6 +14,18 @@ Rails.application.routes.draw do
     registrations: 'registration'
   }
 
+  #  Get all work orders for a specific user
   get 'users/:id/work-orders' => 'users#work_orders'
+
+  # Mark work order en-route
+  put 'work-orders/:id/en-route' => 'work_orders#en_route'
+
+  # Accept or Decline a work order
+  put 'work-orders/:id/:acceptOrDecline' => 'work_orders#accept_or_decline'
+
+  # Assign a work order to a user
+  put 'work-orders/:id/assign/:user_id' => 'work_orders#assign'
+
+ 
 
 end

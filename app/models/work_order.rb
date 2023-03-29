@@ -1,5 +1,5 @@
 class WorkOrder < ApplicationRecord
-    belongs_to :user
+    belongs_to :user, optional: true 
     # , foreign_key: "user_id"
     validates :title, length: {minimum: 1, maximum: 40}, allow_blank: false
     validates :content, length: {minimum: 1}, allow_blank: false
