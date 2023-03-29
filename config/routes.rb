@@ -26,6 +26,4 @@ Rails.application.routes.draw do
   # Assign a work order to a user
   put 'work-orders/:id/assign/:user_id' => 'work_orders#assign'
 
- 
-
 end
