@@ -41,6 +41,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_15_180540) do
     t.string "title"
     t.text "content"
     t.string "work_type"
+    t.string "address"
     t.datetime "appointment_time"
     t.bigint "user_id", default: 0
     t.string "stage", default: "unassigned"
