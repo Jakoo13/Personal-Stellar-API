@@ -32,7 +32,7 @@ module Push
         push_body = @body.merge(
           { 
             "include_external_user_ids" => [work_order.user_id.to_s],
-            "contents" => { "en" => "You have received a new comment.", "pt" => "Você recebeu um novo comentário." }
+            "contents" => { "en" => "You have received a new work order.", "pt" => "Você recebeu um novo comentário." }
           }).to_json
           puts "PUSH BODY:"
           puts push_body
