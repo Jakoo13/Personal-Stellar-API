@@ -26,4 +26,7 @@ Rails.application.routes.draw do
   # Assign a work order to a user
   put 'work-orders/:id/assign/:user_id' => 'work_orders#assign'
 
+  # Mark first time login as false
+  put 'users/:id/first-time-login' => 'users#first_time_login'
+
 end
