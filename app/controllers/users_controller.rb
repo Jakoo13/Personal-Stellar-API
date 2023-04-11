@@ -20,15 +20,6 @@ class UsersController < ApplicationController
         render json: @work_orders, :except =>  [:updated_at]
     end
 
-    # Changes the first_time_login attribute to false
-    # /users/:id/first-time-login
-    def first_time_login
-        @user = User.find(params[:id])
-        @user.first_time_login = false
-        @user.save
-        render json: @user
-    end
-
     private
 
     def find_user
