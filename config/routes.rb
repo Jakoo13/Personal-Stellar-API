@@ -29,4 +29,7 @@ Rails.application.routes.draw do
   # Mark first time login as false
   put 'users/:id/first-time-login' => 'users#first_time_login'
 
+  # Post image to S3
+  get 'pre-signed-url/:work_order_id' => 'images#get_presigned_url'
+
 end
