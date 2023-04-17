@@ -51,3 +51,5 @@ group :development do
   # gem "spring"
 end
 
+
+gem "aws-sdk-s3", "~> 1.120"
